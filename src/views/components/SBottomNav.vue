@@ -49,10 +49,9 @@ import Vue from 'vue';
 export default Vue.extend({
     data()
     {
-        return(
-            {
-            active: 'feed'
-            });
+        return({
+          active: 'feed'
+        });
     },
 
     watch:

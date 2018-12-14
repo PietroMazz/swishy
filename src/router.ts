@@ -17,5 +17,20 @@ export default new Router({
       name: 'wardrobe',
       component: () => import('./views/pages/SWardrobe.vue'),
     },
+    {
+      path: '/wardrobe/:category',
+      name: 'wardrobe-category',
+      component: () => import('./views/pages/SWardrobeCategory.vue'),
+    },
+    {
+      path: '/explore',
+      name: 'explore',
+      component: () => import('./views/pages/SFeed.vue') ,
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: () => import('./views/pages/SFavorites.vue') ,
+    }
   ],
 });
