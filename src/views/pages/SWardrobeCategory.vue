@@ -8,7 +8,7 @@
                     grid-list-md
                     >
                     <v-layout row wrap>
-                        <SWardrobeCard v-for="(item,key) in wardrobe" :key="key" :cloth="item"/>
+                        <SWardrobeCard v-for="(item,key) in filteredWardrobe" :key="key" :cloth="item"/>
                     </v-layout>
                     </v-container>
                 </v-card>
@@ -20,17 +20,25 @@
 <script lang="ts">
 import Vue from 'vue'
 import Cloth from '@/model/Cloth';
+import AllClothes from '@/assets/AllClothes'
 import SWardrobeCard from '@/views/components/SWardrobeCard.vue';
 
 export default Vue.extend({
     components: { SWardrobeCard },
 
-    data: () => ({
-        wardrobe: [ 
-            new Cloth('Disruptor', 'Fila', 2018, 2, "https://www.fila.de/out/pictures/master/product/1/fila_disruptor_low_wmn_white_1715092_1133.jpg"), 
-            new Cloth('Disruptor', 'Fila', 2018, 2, "https://www.fila.de/out/pictures/master/product/1/fila_disruptor_low_wmn_white_1715092_1133.jpg"), 
-            new Cloth('Disruptor', 'Fila', 2018, 2, "https://www.fila.de/out/pictures/master/product/1/fila_disruptor_low_wmn_white_1715092_1133.jpg"), 
-            ]
-    })
+    props: ["category"],
+
+    data: () => 
+    ({
+        wardrobe: AllClothes 
+    }),
+    computed:
+    {
+        filteredWardrobe() : Cloth[]
+        {
+            return this.wardrobe.filter( (c) => c.category === this.category) as any;
+        }
+    }
+
 })
 </script>

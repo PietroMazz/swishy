@@ -21,11 +21,12 @@ export default new Router({
       path: '/wardrobe/:category',
       name: 'wardrobe-category',
       component: () => import('./views/pages/SWardrobeCategory.vue'),
+      props: true
     },
     {
       path: '/explore',
       name: 'explore',
-      component: () => import('./views/pages/SFeed.vue') ,
+      component: () => import('./views/pages/SExplore.vue') ,
     },
     {
       path: '/favorites',

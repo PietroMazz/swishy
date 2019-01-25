@@ -7,10 +7,10 @@
                     <v-responsive :aspect-ratio="1/1">
                       
                         <div style="padding: 10px">
-                            <v-icon x-large>fa-tshirt</v-icon>
+                            <v-icon x-large>fa-star</v-icon>
                         </div>
 
-                        <span>T-Shirt</span>
+                        <span>{{item}}</span>
 
                     </v-responsive>
                 </v-card>
@@ -22,13 +22,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import ClothCategories from '@/assets/ClothCategories'
 export default Vue.extend({
     data()
     {
         return({
-            categories: ['t-shirts','hats','blouses','jumpers', 'jeans','jackets','glasses','underwears','shoes']
+            categories: ClothCategories
         })
     }
 })
 </script>
-
